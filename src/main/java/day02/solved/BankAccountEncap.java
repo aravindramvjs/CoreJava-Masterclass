@@ -30,7 +30,7 @@ class BankAccount{
     }
 }
 
-public class TestBankAccount {
+public class BankAccountEncap {
 
 	 public static void main(String[] args) {
          
