@@ -1,4 +1,4 @@
-package day04.solved;
+package day04.practice;
 
 abstract class Polygon {
 	protected int numberOfSides;
@@ -14,6 +14,8 @@ abstract class Polygon {
 	
 	
 	public abstract double calculateArea();
+	
+	public abstract double circumference();
 }
 
 
@@ -33,12 +35,19 @@ class Rectangle extends Polygon {
 
 	@Override
 	public double calculateArea() {
-		// TODO Auto-generated method stub
-		return this.length * this.breadth;
+		return  1.0/2.0 * (this.length * this.breadth);
 	}
 	
 	public int getNumberOfSides() {
 		return super.numberOfSides;
+	}
+	
+	public double circumference() {
+		double c = Math.round(Math.sqrt(Math.pow(length, 2) + Math.pow(breadth, 2)));
+
+		double circumference = length + breadth + c;
+
+		return circumference;
 	}
 
 }
