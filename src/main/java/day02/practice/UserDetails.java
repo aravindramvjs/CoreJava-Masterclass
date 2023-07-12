@@ -8,7 +8,7 @@ public class UserDetails {
 		user.setUsername("aravind");
 		user.setUseremail("aravind@gmail.com");
 		user.setUserpassword("Aravind@21");
-		
+		     
 		System.out.println(user.getUserid());
 		System.out.println(user.getUsername());
 		System.out.println(user.getUseremail());

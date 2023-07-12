@@ -31,7 +31,7 @@ class BankAccount{
 }
 
 public class BankAccountEncap {
-
+	
 	 public static void main(String[] args) {
          
 	        //create Account
