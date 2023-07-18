@@ -1,15 +1,19 @@
 package day08.practice;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+import java.util.TreeMap;
 
 public class HashMapListObj {
     public static void main(String[] args) {
         
-        HashMap<String, List<String>> departmentEmployeeMap = new HashMap<>();
+        TreeMap<String, List<String>> departmentEmployeeMap = new TreeMap<>();
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter department name and employee name (comma-separated, type 'exit' to stop):");
+        System.out.println("Enter department name and employee name type exit to stop the loop):");
         String input = scanner.nextLine();
 
         while (!input.equalsIgnoreCase("exit")) {
@@ -20,8 +24,9 @@ public class HashMapListObj {
             if (departmentEmployeeMap.containsKey(department)) {
                 List<String> employees = departmentEmployeeMap.get(department);
                 employees.add(employee);
-            } else {
-                List<String> employees = new ArrayList<>();
+            } 
+            else {
+            	List<String> employees = new ArrayList<String>();
                 employees.add(employee);
                 departmentEmployeeMap.put(department, employees);
             }
@@ -31,18 +36,21 @@ public class HashMapListObj {
 
         scanner.close();
 
-        for (Map.Entry<String, List<String>> entry : departmentEmployeeMap.entrySet()) {
-            String department = entry.getKey();
-            List<String> employees = entry.getValue();
-
+        for (String department : departmentEmployeeMap.keySet()) {
+            List<String> employees = departmentEmployeeMap.get(department);
+            Collections.sort(employees);   
+            
             System.out.print(department + ": ");
+            
             for (int i = 0; i < employees.size(); i++) {
                 System.out.print(employees.get(i));
                 if (i != employees.size() - 1) {
                     System.out.print(", ");
                 }
             }
+            
             System.out.println();
         }
+
     }
 }

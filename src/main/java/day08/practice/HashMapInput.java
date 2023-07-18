@@ -10,6 +10,8 @@ public class HashMapInput {
 		System.out.println("Enter the names: ");
 		String input = scan.nextLine();
 		
+		scan.close();
+		
 		String[] names = input.split(", ");
 	
 		

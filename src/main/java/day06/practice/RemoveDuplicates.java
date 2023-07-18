@@ -5,6 +5,19 @@ import java.util.List;
 
 public class RemoveDuplicates {
 	
+	public static List<String> removeDups(List<String> sourceList){
+		
+		List<String> uniqueCity = new ArrayList<String>();
+		
+		for(String city : sourceList) {
+			if(!uniqueCity.contains(city)) {
+				uniqueCity.add(city);
+			}
+		}
+		
+		return (uniqueCity);
+	}
+	
 	public static void main(String[] args) {
 		
 		List<String> cityList = new ArrayList<String>();
@@ -13,15 +26,8 @@ public class RemoveDuplicates {
 		cityList.add("Mumbai");
 		cityList.add("Mumbai");
 		
-		List<String> uniqueCity = new ArrayList<String>();
+		System.out.println(RemoveDuplicates.removeDups(cityList));
 		
-		for(String city : cityList) {
-			if(!uniqueCity.contains(city)) {
-				uniqueCity.add(city);
-			}
-		}
-		
-		System.out.println(uniqueCity);
 	}
 
 }
