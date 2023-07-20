@@ -13,7 +13,7 @@ public class HashMapListObj {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter department name and employee name type exit to stop the loop):");
+        System.out.println("Enter department name and employee name type exit to stop the loop:");
         String input = scanner.nextLine();
 
         while (!input.equalsIgnoreCase("exit")) {
@@ -21,14 +21,14 @@ public class HashMapListObj {
             String department = parts[0].trim();
             String employee = parts[1].trim();
 
-            if (departmentEmployeeMap.containsKey(department)) {
+            if (departmentEmployeeMap.containsKey(department)) {//IT
                 List<String> employees = departmentEmployeeMap.get(department);
                 employees.add(employee);
             } 
             else {
             	List<String> employees = new ArrayList<String>();
-                employees.add(employee);
-                departmentEmployeeMap.put(department, employees);
+                employees.add(employee);//ARAVIND ADD
+                departmentEmployeeMap.put(department, employees);//IT: ARAVIND
             }
 
             input = scanner.nextLine();

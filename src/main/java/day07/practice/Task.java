@@ -12,18 +12,6 @@ public class Task {
         this.name = name;
         this.deadline = deadline;
     }
-    
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public LocalDate getDeadline() {
-        return deadline;
-    }
 
 	@Override
 	public String toString() {
