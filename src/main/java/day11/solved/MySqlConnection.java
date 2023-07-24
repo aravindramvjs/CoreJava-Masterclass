@@ -15,6 +15,7 @@ public class MySqlConnection {
 		Connection con = DriverManager.getConnection(url, userName, password);
 		
 		System.out.println("connection created");
-	       con.close();
+		
+	    con.close();
 	}
 }

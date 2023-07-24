@@ -10,8 +10,12 @@ public class Task {
 		this.priority = priority;
 	}
 
+	public Task() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String toString() {
-		return  "\n" + "TaskName : " + taskName + ", priority : " + priority;
+		return  "TaskName : " + taskName + ", priority : " + priority;
 	}
 
 	public String getTaskName() {
