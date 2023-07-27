@@ -7,50 +7,27 @@ import java.util.Scanner;
 import java.util.TreeMap;
 
 public class HashMapListObj {
-    public static void main(String[] args) {
-        
+
+    public static TreeMap<String, List<String>> processDepartmentEmployeeInput(String input) {
         TreeMap<String, List<String>> departmentEmployeeMap = new TreeMap<>();
 
-        Scanner scanner = new Scanner(System.in);
+        String[] lines = input.split("\\r?\\n");
 
-        System.out.println("Enter department name and employee name type exit to stop the loop:");
-        String input = scanner.nextLine();
-
-        while (!input.equalsIgnoreCase("exit")) {
-            String[] parts = input.split(",");
+        for (String line : lines) {
+            String[] parts = line.split(",");
             String department = parts[0].trim();
             String employee = parts[1].trim();
 
-            if (departmentEmployeeMap.containsKey(department)) {//IT
+            if (departmentEmployeeMap.containsKey(department)) {
                 List<String> employees = departmentEmployeeMap.get(department);
                 employees.add(employee);
-            } 
-            else {
-            	List<String> employees = new ArrayList<String>();
-                employees.add(employee);//ARAVIND ADD
-                departmentEmployeeMap.put(department, employees);//IT: ARAVIND
+            } else {
+                List<String> employees = new ArrayList<>();
+                employees.add(employee);
+                departmentEmployeeMap.put(department, employees);
             }
-
-            input = scanner.nextLine();
         }
 
-        scanner.close();
-
-        for (String department : departmentEmployeeMap.keySet()) {
-            List<String> employees = departmentEmployeeMap.get(department);
-            Collections.sort(employees);   
-            
-            System.out.print(department + ": ");
-            
-            for (int i = 0; i < employees.size(); i++) {
-                System.out.print(employees.get(i));
-                if (i != employees.size() - 1) {
-                    System.out.print(", ");
-                }
-            }
-            
-            System.out.println();
-        }
-
+        return departmentEmployeeMap;
     }
 }

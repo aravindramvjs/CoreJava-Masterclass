@@ -1,30 +1,24 @@
 package day09.practice;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class SortNum {
 	
-	public static void main(String[] args) {
-		
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter Numbers: ");
-		List<Integer> inputList = new ArrayList<Integer>();
-		
-		while (scan.hasNext()) {
-			
-			int inputNum = scan.nextInt();
-			
-			if(inputNum == -1) {
-				break;
-			}
-			
-			inputList.add(inputNum);
-		}
-		
+	public static List<Integer> sortNumbers(List<Integer> inputList) {
 		Collections.sort(inputList);
-		
-		System.out.println(inputList);
-		
+		return inputList;
 	}
 	
+	public static void main(String[] args) {
+
+		List<Integer> inputList = new ArrayList<>();
+		inputList.add(5);
+		inputList.add(2);
+		inputList.add(10);
+		inputList.add(1);
+		List<Integer> sortedList = sortNumbers(inputList);
+		System.out.println(sortedList);
+	}
 }
