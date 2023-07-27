@@ -6,7 +6,7 @@ public class MySqlConnection {
 	
 	public static void main(String[] args) throws SQLException {
 		
-		String url = "jdbc:mysql://localhost:3306/fssa";
+		String url = "jdbc:mysql://:3306/freshtimejdbc";
 		String userName = "root";
 		String password = "root";
 		

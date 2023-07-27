@@ -20,7 +20,7 @@ public class AddingTaskInDb {
 		tasks.add(task1);
 		tasks.add(task2);
 		tasks.add(task3);
-		//jdbc:mysql://localhost:3306/jdbc_demo1
+
 		Connection con= DriverManager.getConnection("jdbc:mysql://localhost:3306/tasks","root","123456");
 		
 		String query="INSERT INTO task_details(task_id,task_name,status) VALUES"
