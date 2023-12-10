@@ -9,14 +9,6 @@ class UserAlreadyExistsException extends RuntimeException {
     public UserAlreadyExistsException(String msg) {
         super(msg);
     }
-
-    public UserAlreadyExistsException(Throwable te) {
-        super(te);
-    }
-
-    public UserAlreadyExistsException(String msg, Throwable te) {
-        super(msg, te);
-    }
 }
 
 class User {
@@ -53,11 +45,20 @@ class User {
     public void setEmailId(String emailId) {
         this.emailId = emailId;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", emailId='" + emailId + '\'' +
+                '}';
+    }
 }
 
 class UserManager {
 
-    private List<User> users = new ArrayList<>();
+    private List<User> users = new ArrayList();
 
     public void registerUser(User user) throws UserAlreadyExistsException {
         if (user == null) {
